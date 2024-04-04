@@ -11,4 +11,4 @@ The program consists of 2 functions:
 
 ## Instructions for Use
 
-Simply run 'IdleTimeDetector.html' and feel free to experiment!
+Simply run `IdleTimeDetector.html` and feel free to experiment!
