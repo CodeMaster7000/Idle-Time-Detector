@@ -1,1 +1,44 @@
-
+<body> 
+	<h1 style="color:black"> 
+		Idle Time Detector 
+	</h1> 
+	
+	<p> 
+		An interaction with the mouse or 
+		keyboard will reset the timer. 
+	</p> 
+	
+	<p class="timertext" style="font-size: 1.25rem;"> 
+		You have been idle for 
+		<span class="secs"></span> seconds. 
+	</p> 
+	
+	<script type="text/javascript"> 
+		let timer, currSeconds = 0; 
+		
+		function resetTimer() { 
+			document.querySelector(".timertext") 
+					.style.display = 'none'; 
+			clearInterval(timer); 
+			currSeconds = 0; 
+		
+			timer = 
+				setInterval(startIdleTimer, 1000); 
+		} 
+		
+		window.onload = resetTimer; 
+		window.onmousemove = resetTimer; 
+		window.onmousedown = resetTimer; 
+		window.ontouchstart = resetTimer; 
+		window.onclick = resetTimer; 
+		window.onkeypress = resetTimer; 
+		
+		function startIdleTimer() { 
+			currSeconds++; 
+			document.querySelector(".secs") 
+				.textContent = currSeconds; 
+			document.querySelector(".timertext") 
+				.style.display = 'block'; 
+		} 
+	</script> 
+</body>
